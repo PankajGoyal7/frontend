@@ -6,3 +6,8 @@ before_install:
 
 script:
   - docker run pankaj/frontend npm run test -- --coverage
+
+deploy:
+  - provider: gae
+  - keyfile: service-account.json
+  - project: frontend
