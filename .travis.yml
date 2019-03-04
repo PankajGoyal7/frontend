@@ -1,0 +1,8 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t pankaj/frontend -f Dockerfile.dev .
+
+script:
+  - docker run pankaj/frontend npm run test -- --coverage
